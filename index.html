@@ -17,9 +17,9 @@
     <header>
         <nav class="navbar bg-dark navbar-expand-lg mx-5" data-bs-theme="dark">
             <a class="navbar-brand mx-5 text-white logo" id="reloadPage" href="#">Portfolio</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-            </button>
+          </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto mx-5">
                 <li class="nav-item active">
@@ -44,11 +44,11 @@
 
     <section class="section active" id="section-home">
         <div class="row">
-            <div id="home" class="col-12 col-lg-6 right-side">
-                <div class="home-content">
+            <div id="home" class="col-12 col-md-6 right-side">
+                <div class="home-content text-center text-md-start">
                     <h3>Hi there, I'm</h3>
                     <h1>Andreas</h1>
-                    <h3>And I'm a <span class="typed" id="workRoles"></span></h3>
+                    <h3>And I'm a <span class="typed d-block d-lg-inline" id="workRoles"></span></h3>
                     <p>Check out my work and feel free to get in touch.</p>
                     <div class="social-media">
                       <a href="https://www.linkedin.com/in/andreasbrogaard" target="_blank" style="--i:7;"><i class='bx bxl-linkedin-square'></i></a>
@@ -56,13 +56,13 @@
                         <a href="#" style="--i:9;"><i class='bx bxl-instagram'></i></a>
                         <a href="#" style="--i:10;"><i class='bx bxl-youtube' ></i></a>
                     </div>
-                    <a href="CV.pdf" target="_blank" class="cv-btn">Download CV</a>
-                    <span class="lastText"></span>
+                    <a href="CV.pdf" class="cv-btn">Download CV</a>
+                    <span class="d-block lastText mt-2"></span>
                 </div>
                 </div>
                 
-            <div class="col-12 col-lg-6 left-side d-flex justify-content-center align-items-center">
-                <img src="person_cafe.png" class="home-img">
+            <div class="d-none d-md-block col-12 col-md-6 left-side">
+                <img src="hero_picture.png" class="home-img">
             </div>
         </div>
     </section>
@@ -70,7 +70,7 @@
     <section class="section" id="section-about">
             <div class="row">
                 <div class="col-12 col-lg-6 left-side d-flex justify-content-center align-items-center">
-                    <img src="person_cafe.png" class="about-img d-none d-md-block">
+                    <img src="hero_image.png" class="about-img d-none d-md-block">
                 </div>
                 <div id="about" class="col-12 col-lg-6">
                     <div class="about-content">
@@ -91,36 +91,36 @@
     </section>
 
     <section class="section" id="section-skills">
-      <div class="d-flex justify-content-center align-items-center" id="about-cards">
-        <div style="--i:1;" class="about-card skill rounded">
+      <div class="d-flex justify-content-center align-items-center" id="skill-cards">
+        <div style="--i:1;" class="skill-card skill rounded">
             <div class="card-top first d-flex justify-content-center align-items-center border-bottom">
-                <h2><i class='bx bxl-figma'></i></h2>
+                <h2 class="first"><i class='bx bx-pen' ></i></h2>
             </div>
             <p class="text-center jump" style="--i:1;">Figma</p>
             <p class="text-center jump" style="--i:2;">Web Design</p>
             <p class="text-center jump" style="--i:3;">Animation</p>
             <p class="text-center jump" style="--i:4;">Drawing</p>
           </div>
-          <div style="--i:2;" class="about-card skill rounded">
+          <div style="--i:2;" class="skill-card skill rounded">
               <div class="card-top second d-flex justify-content-center align-items-center border-bottom">
-                  <h2><i class='bx bx-code-alt' ></i></h2>
+                  <h2 class="second"><i class='bx bx-code-alt' ></i></h2>
               </div>
-              <p class="text-center jump" style="--i:5;">Python</p>
-              <p class="text-center jump" style="--i:6;">JavaScript</p>
-              <p class="text-center jump" style="--i:7;">jQuery</p>
-              <p class="text-center jump" style="--i:8;">Bootstrap</p>
-              <p class="text-center jump" style="--i:9;">HTML/CSS</p>
-              <p class="text-center jump" style="--i:10;">HTMX</p>
+              <p class="text-center jump" style="--i:7;">Python</p>
+              <p class="text-center jump" style="--i:8;">JavaScript</p>
+              <p class="text-center jump" style="--i:9;">jQuery</p>
+              <p class="text-center jump" style="--i:10;">Bootstrap</p>
+              <p class="text-center jump" style="--i:11;">HTML/CSS</p>
+              <p class="text-center jump" style="--i:12;">HTMX</p>
           </div>
-          <div style="--i:3;" class="about-card skill rounded">
+          <div style="--i:3;" class="skill-card skill rounded">
               <div class="card-top third d-flex justify-content-center align-items-center border-bottom">
-                  <h2><i class='bx bx-select-multiple'></i></h2>
+                  <h2 class="third"><i class='bx bx-select-multiple'></i></h2>
               </div>
-              <p class="text-center jump" style="--i:11;">All arounder</p>
-              <p class="text-center jump" style="--i:12;">Communication</p>
-              <p class="text-center jump" style="--i:13;">Teaching</p>
-              <p class="text-center jump" style="--i:14;">Squid boy</p>
-              <p class="text-center jump" style="--i:15;">Mood booster</p>
+              <p class="text-center jump" style="--i:13;">All arounder</p>
+              <p class="text-center jump" style="--i:14;">Communication</p>
+              <p class="text-center jump" style="--i:15;">Teaching</p>
+              <p class="text-center jump" style="--i:16;">Squid boy</p>
+              <p class="text-center jump" style="--i:17;">Mood booster</p>
           </div>
        </div>  
     </section>
@@ -129,20 +129,32 @@
       <div class="portfolio">
           <div class="row">
             <div class="col-6 text-center">
+              
               <h2 class="first">Student projects</h2>
-                <div class="project student" style="--i:3;"></div>
-                <div class="project student" style="--i:5;"></div>
-                <div class="project student" style="--i:4;"></div>
-                <div class="project student" style="--i:6;"></div>
-                <div class="project student" style="--i:7;"></div>
+                <a href="https://andreaschristensen89.github.io/cleaner-copenhagen/" target="_blank">
+                  <div class="project student pt-5" style="--i:3;">HTML/CSS</div>
+                </a>
+                <a href="https://andreaschristensen89.github.io/janken-bossu/"  target="_blank">
+                  <div class="project student pt-5" style="--i:5;">JavaScript</div>
+                </a>
+                <a href="https://battleship-project.herokuapp.com/"  target="_blank">
+                  <div class="project student pt-5" style="--i:4;">Python</div>
+                </a>
+                <a href="https://resto-booking-system.herokuapp.com/"  target="_blank">
+                  <div class="project student pt-5" style="--i:6;">Django</div>
+                </a>
+                <a href="https://salary-struggle.herokuapp.com/"  target="_blank">
+                  <div class="project student pt-5" style="--i:7;">Django E-shop</div>
+                </a>
+              
             </div>
             <div class="col-6 text-center">
-              <h2 class="second">Other</h2>
-                <div class="project professional" style="--i:4;"></div>
-                <div class="project professional" style="--i:5;"></div>
-                <div class="project professional" style="--i:3;"></div>
-                <div class="project professional" style="--i:7;"></div>
-                <div class="project professional" style="--i:6;"></div>
+              <h2 class="second">Post school</h2>
+                <div class="project professional pt-5" style="--i:4;">Weather</div>
+                <div class="project professional pt-5" style="--i:5;">Game</div>
+                <div class="project professional pt-5" style="--i:3;">Converter</div>
+                <div class="project professional pt-5" style="--i:7;">Puzzle</div>
+                <div class="project professional pt-5" style="--i:6;">Translator</div>
             </div>
         </div>
       </div>
@@ -160,7 +172,7 @@
           </div>
           <div class="col-12 text-center">
             <p id="downloadCV"></p>
-            <a href="CV.pdf" target="_blank" class="cv-btn">Download CV</a>
+            <a href="CV.pdf" class="cv-btn">Download CV</a>
           </div>
         </div>
     </section>
