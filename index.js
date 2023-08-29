@@ -93,33 +93,13 @@ document.addEventListener('DOMContentLoaded', () => {
 function homeTyped() {
     workRoles = new Typed("#workRoles", {
         strings: [
-            "Frontend Developer",
             "Full-Stack Developer",
-            "Rapper",
-            "Guru",
-            "Genius",
-            "^1000Ok ok ok",
-            "Junior Developer"
         ],
         typeSpeed: 25,
         backSpeed: 25,
         backDelay: 1000,
         startDelay: 3000,
         showCursor: false,
-        onComplete: function() {
-            new Typed(".lastText", {
-                strings: [
-                    "But the animations look neat",
-                    "Right?",
-                    ""
-                ],
-                typeSpeed: 25,
-                backSpeed: 10,
-                backDelay: 1000,
-                loop: false,
-                showCursor: false,
-            })
-        },
     })
 }
  
