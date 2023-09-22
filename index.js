@@ -16,6 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     links.forEach((link) => {
         link.addEventListener('click', (event) => {
+            // Get the target section ID from the clicked link
+            const targetSectionID = link.getAttribute('data-section');
+
+            // Locate the corresponding section element
+            const correspondingSection = document.getElementById(`section-${targetSectionID}`);
+
+            // Check if the corresponding section is already active
+            if (correspondingSection && correspondingSection.classList.contains('active')) {
+                // Exit the function early if the section is already active
+                return;
+            }
+
             event.preventDefault();
             // expose black background and trigger fadein animation
             darkFade.classList.remove("d-none");
@@ -42,45 +54,55 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (sectionToBeActive) {
                     sectionToBeActive.classList.add('active');
                 }
-    
-                // destroy typed.js objects if home or about
-                if (currentSection === "section-home") {
-                    workRoles.destroy();
-                    workRoles = null;
-                    document.getElementById("workRoles").textContent = "";
-                } 
-                else if (currentSection === "section-about") {
-                    firstIntro.destroy();
-                    firstIntro = null;
-                    document.getElementById("firstIntro").textContent = "";
-                    document.getElementById("secondIntro").textContent = "";
+                handleTypedobjects(currentSection);
+                switch (currentSection) {
+                    // destroy typed.js objects if home or about
+                    case 'section-home':
+                        workRoles.destroy();
+                        workRoles = null;
+                        document.getElementById("workRoles").textContent = "";
+                        break;
+                    case 'section-about':
+                        firstIntro.destroy();
+                        firstIntro = null;
+                        document.getElementById("firstIntro").textContent = "";
+                        document.getElementById("secondIntro").textContent = "";
+                        break;
+                    case 'section-skills':
+                        paragraphs.forEach(p => p.classList.remove('jumpy'));
+                        break;
+                    case 'section-contact':
+                        typedEmail.destroy();
+                        typedEmail = null;
+                        document.getElementById("email").textContent = "";
+                        document.getElementById("downloadCV").textContent = "";
+                        break;
+                    default:
+                        break;
                 }
-                else if (currentSection === "section-skills") {
-                    paragraphs.forEach((paragraph) => {
-                        paragraph.classList.remove("jumpy");
-                    });
-                }
-                else if (currentSection === "section-contact") {
-                    typedEmail.destroy();
-                    typedEmail = null;
-                    document.getElementById("email").textContent = "";
-                    document.getElementById("downloadCV").textContent = "";
-                }
-                
-                // initiate animations according to page
 
-                // text on home page
-                if (targetSectionID === "home") {homeTyped();}
-                // text on about page
-                else if (targetSectionID === "about") {aboutTyped();}
-                // text jump on skills page
-                else if (targetSectionID === "skills") {
-                    setTimeout(function() {
-                        paragraphs.forEach((paragraph) => {
-                            paragraph.classList.add("jumpy");
-                        });
-                    }, 2000)}
-                else if (targetSectionID === "contact") {contactTyped();}
+                // initiate animations according to page
+                switch (targetSectionID) {
+                    // destroy typed.js objects if home or about
+                    case 'home':
+                        setTimeout(homeTyped(), 3000);
+                        break;
+                    case 'about':
+                        aboutTyped();
+                        break;
+                    case 'skills':
+                        setTimeout(function() {
+                            paragraphs.forEach((paragraph) => {
+                                paragraph.classList.add("jumpy");
+                            });
+                        }, 2000)
+                        break;
+                    case 'contact':
+                        contactTyped();
+                        break;
+                    default:
+                        break;
+                }
 
             }, 500)
             
@@ -89,17 +111,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+function handleTypedobjects() {
+    
+}
+
 // function to start the typing on the home page
 function homeTyped() {
     workRoles = new Typed("#workRoles", {
-        strings: [
-            "Full-Stack Developer",
-        ],
-        typeSpeed: 25,
-        backSpeed: 25,
-        backDelay: 1000,
+        strings: ["Full-Stack Developer"],
+        typeSpeed: 50,
         startDelay: 3000,
-        showCursor: false,
+        showCursor: true,
     })
 }
  
