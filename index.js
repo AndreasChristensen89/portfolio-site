@@ -101,6 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Toggle when clicking burger
   burger.addEventListener('click', () => {
+    forceCloseExperience(); // ensure modal never overlaps mobile nav
+
     if (document.body.classList.contains('nav-open')) {
       closeNav();
     } else {
@@ -109,17 +111,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Clicking on the dark overlay closes the menu
-  navOverlay.addEventListener('click', () => closeNav());
+  navOverlay.addEventListener('click', () => {
+    forceCloseExperience();
+    closeNav();
+  });
 
   // Clicking a link: fade out then close
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
+      forceCloseExperience();
       closeNav(true);
-      // You likely already scroll to sections in another handler;
-      // this just handles the animation/closing.
     });
   });
-  
+
     // activate typed.js object for home page
     homeTyped();
     const paragraphs = document.querySelectorAll(".jump");
@@ -143,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             event.preventDefault();
+
             // expose black background and trigger fadein animation
             darkFade.classList.remove("d-none");
             darkFade.classList.add("active");
@@ -168,6 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (sectionToBeActive) {
                     sectionToBeActive.classList.add('active');
                 }
+
+                // ensure experience modal is closed when changing sections
+                forceCloseExperience();
+    
                 // handleTypedobjects(currentSection);
                 switch (currentSection) {
                     // destroy typed.js objects if home or about
@@ -225,6 +234,13 @@ document.addEventListener('DOMContentLoaded', () => {
             
         });
     });
+
+    const experienceOverlay = document.getElementById('experienceOverlay');
+    if (experienceOverlay) {
+    experienceOverlay.addEventListener('click', () => {
+        forceCloseExperience();
+    });
+    }
 
 });
 
@@ -298,6 +314,13 @@ function formatDates(start, end) {
     if (!start && !end) return "";
     if (start && !end) return `${start} – Present`;
     return `${start} – ${end}`;
+}
+
+function forceCloseExperience() {
+    const box = document.querySelector('.experience');
+    if (box && box.classList.contains('show')) {
+        closeInformation();
+    }
 }
 
 function showDetails(passedTitle) {
