@@ -5,69 +5,108 @@ let downloadCV;
 
 const EXPERIENCES = [
   {
-    "title": "Test Engineer",
-    "company": "Sopra Steria",
-    "location": "Brussels, BE",
-    "start": "2023-09",
-    "end": "2025-03",
-    "summary": "Mobile/TV streaming QA · test automation & manual testing · Agile · ISTQB.",
-    "tags": ["QA", "Automation", "Agile", "Streaming"]
+    title: "Test Engineer",
+    company: "Sopra Steria / Telenet",
+    location: "Brussels & Mechelen, BE",
+    start: "2023-09",
+    end: "2025-08",
+    summary: "Consultant test engineer for Telenet: frontend QA on Horizon Go (mobile, web, TV box & 3rd-party hardware), test automation in Java (Cucumber, Selenium, Tequila), plus API testing. ISTQB & Agile/Scrum certified.",
+    tags: ["QA", "Automation", "Java", "Cucumber", "Selenium", "Agile"]
   },
   {
-    "title": "Full-stack Developer",
-    "company": "Omina / Claude Bernard Univ.",
-    "location": "Brussels & Lyon",
-    "start": "2021-06",
-    "end": "2022-04",
-    "summary": "Python/Django front-leaning work; product features & UI integration.",
-    "tags": ["Python", "Django", "Frontend"]
+    title: "Full-stack Developer",
+    company: "Omina Technologies / Univ. Lyon 1",
+    location: "Brussels & Lyon",
+    start: "2022-06",
+    end: "2023-09",
+    summary: "Django development with frontend focus: Python, HTML/CSS/JS, HTMX & Bootstrap. UX work in Figma with product managers; research data tools and XML/database apps using Django and Postgres.",
+    tags: ["Python", "Django", "Frontend", "Postgres", "UX"]
   },
   {
-    "title": "Vehicle Operations → Repair Partner",
-    "company": "VOI Technology",
-    "location": "France",
-    "start": "2019-06",
-    "end": "2020-02",
-    "summary": "Ops performance, partner coordination, issue management.",
-    "tags": ["Operations", "Logistics", "Partners"]
+    title: "Vehicle Operations → Repair Partner",
+    company: "VOI Technology",
+    location: "France",
+    start: "2019-06",
+    end: "2020-08",
+    summary: "Logistics and technical ops for e-scooters, then process manager rolling out and evolving repair processes across French cities. Coordination with Stockholm HQ, new tools/processes, and support for new facility setups.",
+    tags: ["Operations", "Logistics", "Processes", "E-mobility"]
   },
   {
-    "title": "Content Manager",
-    "company": "Roskilde Office",
-    "location": "Denmark",
-    "start": "2017-01",
-    "end": "2017-11",
-    "summary": "Content ops, coordination between teams, delivery to deadlines.",
-    "tags": ["Content", "Coordination"]
+    title: "Content Manager",
+    company: "Lyreco Scandinavia",
+    location: "Roskilde, DK",
+    start: "2018-01",
+    end: "2018-10",
+    summary: "Digital content management for the Scandinavian webshop: leading data collection projects, improving online product presentation, and coordinating with digital, communications, graphic, and product teams.",
+    tags: ["Content", "E-commerce", "Digital", "Projects"]
   },
   {
-    "title": "Product Assistant",
-    "company": "Nordic Project (Finland/DK)",
-    "location": "Nordics",
-    "start": "2016-06",
-    "end": "2016-12",
-    "summary": "Product update project across sites; data clean-up; release support.",
-    "tags": ["Products", "Excel", "Ops"]
+    title: "Product Assistant",
+    company: "Lyreco Scandinavia",
+    location: "Roskilde, DK",
+    start: "2017-07",
+    end: "2017-12",
+    summary: "Product data & documentation project for Scandinavia and Finland: safety/technical information, product bibles, daily supplier contact, and close collaboration with multiple internal departments.",
+    tags: ["Products", "Documentation", "Suppliers"]
+  },
+
+  // Additional experience
+  {
+    title: "Market Analyst Intern",
+    company: "Tværfagligt Forum, Kursus & Tema",
+    location: "Virum, DK",
+    start: "2017-01",
+    end: "2017-03",
+    summary: "Market and SEO analysis, customer database creation, project plan and campaigns on Google/Facebook, plus website maintenance and promotional material design.",
+    tags: ["Market analysis", "SEO", "Campaigns"]
   },
   {
-    "title": "English Teacher",
-    "company": "Japan (ALT)",
-    "location": "Japan",
-    "start": "2015-01",
-    "end": "2015-10",
-    "summary": "Classroom instruction and language coaching.",
-    "tags": ["Teaching", "Education"]
+    title: "Vehicle Operations Specialist",
+    company: "VOI Technology",
+    location: "Lyon, FR",
+    start: "2019-06",
+    end: "2020-01",
+    summary: "Scooter logistics, diagnostics, hard repairs, software installs/updates, deployment and collecting. Team-lead style role in close collaboration with warehouse and city operations; work carried out in French.",
+    tags: ["Operations", "Logistics", "Repairs", "Team lead"]
   },
   {
-    "title": "Mandarin Studies",
-    "company": "Fudan University",
-    "location": "Shanghai, CN",
-    "start": "2013-09",
-    "end": "2014-06",
-    "summary": "Intensive Chinese; HSK track.",
-    "tags": ["Mandarin", "HSK"]
+    title: "Volunteering",
+    company: "Summer Park Equestrian (Ranch Hand)",
+    location: "Upper Coomera, QLD, AU",
+    start: "2019-01",
+    end: "2019-01",
+    summary: "Volunteer ranch hand: horse care, building and repairing fences, installing waterlines and solar panels, extending hilly access roads, and general maintenance of the ranch.",
+    tags: ["Volunteering", "Hands-on", "Maintenance"]
+  },
+  {
+    title: "English Teacher",
+    company: "Mabuchi / Epion & schools in Shanghai",
+    location: "Osaka & Shanghai",
+    start: "2014-03",
+    end: "2016-10",
+    summary: "English instructor for children and teens: 1-to-1 and small groups, homework, testing and grading, presentations, and ongoing parent communication in Japan and China.",
+    tags: ["Teaching", "Education", "Kids & teens"]
+  },
+  {
+    title: "Guitar Teacher",
+    company: "Fudan University",
+    location: "Shanghai, CN",
+    start: "2014-09",
+    end: "2014-12",
+    summary: "Group guitar classes for high-school students (3–8 per group) with a focus on rhythm, coordination, and playing together.",
+    tags: ["Music", "Teaching", "Guitar"]
+  },
+  {
+    title: "Mandarin Studies",
+    company: "Fudan University",
+    location: "Shanghai, CN",
+    start: "2014-02",
+    end: "2014-07",
+    summary: "Intensive Mandarin language course (C–E level) and Chinese area studies at Fudan University.",
+    tags: ["Mandarin", "China", "Language"]
   }
-]
+];
+
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('reloadPage').addEventListener('click', function() {
@@ -242,17 +281,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     }
 
-});
+      // --- Mobile experience toggle ---
+  const toggleButtons = document.querySelectorAll('.experience-toggle button');
+  const mainCol = document.querySelector('.experience-main');
+  const addCol = document.querySelector('.experience-additional');
 
-function handleTypedobjects() {
-    
-}
+  if (toggleButtons.length && mainCol && addCol) {
+    // Default: main experience active on mobile
+    if (window.innerWidth < 992) {
+      mainCol.classList.add('is-mobile-active');
+    }
+
+    toggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // update button states
+        toggleButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const target = btn.getAttribute('data-exp');
+
+        if (target === 'main') {
+          mainCol.classList.add('is-mobile-active');
+          addCol.classList.remove('is-mobile-active');
+        } else {
+          addCol.classList.add('is-mobile-active');
+          mainCol.classList.remove('is-mobile-active');
+        }
+      });
+    });
+
+    // Keep things sane when resizing between mobile and desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 992) {
+        // desktop: show both columns, don't rely on mobile classes
+        mainCol.classList.remove('is-mobile-active');
+        addCol.classList.remove('is-mobile-active');
+      } else {
+        // mobile: ensure at least one is active
+        if (
+          !mainCol.classList.contains('is-mobile-active') &&
+          !addCol.classList.contains('is-mobile-active')
+        ) {
+          mainCol.classList.add('is-mobile-active');
+        }
+      }
+    });
+  }
+
+});
 
 // function to start the typing on the home page
 function homeTyped() {
     workRoles = new Typed("#workRoles", {
         strings: ["Online Profile"],
-        typeSpeed: 50,
+        typeSpeed: 10,
         startDelay: 3000,
         showCursor: true,
     })
