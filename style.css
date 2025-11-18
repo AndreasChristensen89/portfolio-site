@@ -109,7 +109,9 @@ body.nav-open .navbar-burger span:nth-child(3) {
 }
 
 /* --- Mobile menu styles --- */
-@media (max-width: 768px) {
+
+/* mobile + tablet menu  */
+@media (max-width: 991.98px) {
   /* Show burger only on mobile */
   .navbar-burger {
     display: block;
@@ -559,7 +561,7 @@ body.nav-open .navbar-burger span:nth-child(3) {
 .portfolio .project {
     height: 125px;
     width: 125px;
-    margin: 30px;
+    margin: 10px;
 
     display: inline-flex;
     align-items: center;
@@ -606,6 +608,26 @@ body.nav-open .navbar-burger span:nth-child(3) {
 
 .portfolio .professional:hover {
     box-shadow: 0 10px 50px rgb(87, 126, 243);
+}
+
+/* Mobile toggle behavior for experience section */
+@media (max-width: 991.98px) {
+  /* On mobile, hide both columns by default... */
+  .portfolio .experience-main,
+  .portfolio .experience-additional {
+    display: none;
+  }
+
+  /* ...and only show the one marked as active */
+  .portfolio .experience-main.is-mobile-active,
+  .portfolio .experience-additional.is-mobile-active {
+    display: block;
+  }
+
+  /* Optional: tighten top spacing a bit on mobile */
+  .portfolio {
+    margin-top: 60px;
+  }
 }
 
 .experience {
@@ -889,6 +911,10 @@ body.nav-open .navbar-burger span:nth-child(3) {
         align-items: center;
         height: 100%;
         padding: 10%;
+    }
+
+    .home-img {
+        display: none;
     }
   }
 
