@@ -50,13 +50,13 @@
 <!-- Overlay for mobile menu -->
 <div id="navOverlay"></div> 
 
-    <section class="section active" id="section-home">
+    <section class="section active mt-5 mt-md-0" id="section-home">
         <div class="row">
             <div id="home" class="col-12 col-md-6 right-side">
                 <div class="home-content text-center text-md-start">
                     <h3>Hi there, I'm</h3>
                     <h1>Andreas</h1>
-                    <h3>And this is my <span class="typed d-block d-lg-inline" id="workRoles"></span></h3>
+                    <h3>And this is my<br> <span class="typed d-lg-inline" id="workRoles"></span></h3>
                     <p>Have a look around and feel free to get in touch.</p>
                     <div class="social-media">
                       <a href="https://www.linkedin.com/in/andreasbrogaard" target="_blank" style="--i:7;"><i class='bx bxl-linkedin-square'></i></a>
@@ -75,27 +75,27 @@
     </section>
 
     <section class="section" id="section-about">
-            <div class="row">
-                <div class="col-12 col-lg-6 left-side d-flex justify-content-center align-items-center">
-                    <img src="hero_image.png" class="about-img d-none d-md-block">
-                </div>
-                <div id="about" class="col-12 col-lg-6">
-                    <div class="about-content">
-                        <h1>Andreas Christensen</h1>
-                        <div class="height">
-                        <p class="typed" id="firstIntro"></p>
-                        <p class="typed" id="secondIntro"></p>
-                        </div>
-                        <div class="social-media">
-                            <a href="https://www.linkedin.com/in/andreasbrogaard" target="_blank" style="--i:1;"><i class='bx bxl-linkedin-square'></i></a>
-                            <a href="https://github.com/AndreasChristensen89" target="_blank" style="--i:2;"><i class='bx bxl-github'></i></a>
-                            <a href="#" style="--i:3;"><i class='bx bxl-instagram'></i></a>
-                            <a href="#" style="--i:4;"><i class='bx bxl-youtube' ></i></a>
-                        </div>
-                    </div>
-                    </div>
-            </div>
-    </section>
+
+  <h1 class="h1 mt-5 text-center d-lg-none">Tablet & Mobile view coming soon</h1>
+
+  <div class="row d-none d-lg-flex">
+    <div class="col-12 col-lg-6 left-side d-flex justify-content-center align-items-center">
+      <img src="hero_image.png" class="about-img d-none d-md-block">
+    </div>
+    <div id="about" class="col-12 col-lg-6">
+      <div class="about-content">
+        <h1>Andreas Christensen</h1>
+        <div class="height">
+          <p class="typed" id="firstIntro"></p>
+          <p class="typed" id="secondIntro"></p>
+        </div>
+        <div class="social-media">
+          <!-- links -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section class="section" id="section-skills">
       <div class="d-flex justify-content-center align-items-center" id="skill-cards">
@@ -117,7 +117,7 @@
               <p class="text-center jump" style="--i:7;">HTML/CSS/JS/HTMX</p>
               <p class="text-center jump" style="--i:8;">SAP</p>
               <p class="text-center jump" style="--i:9;">Jira/Confluence</p>
-              <p class="text-center jump" style="--i:10;">HTMX</p>
+              <p class="text-center jump" style="--i:10;">Test Automation</p>
           </div>
           <div style="--i:3;" class="skill-card skill rounded">
               <div class="card-top third d-flex justify-content-center align-items-center border-bottom">
@@ -127,7 +127,7 @@
               <p class="text-center jump" style="--i:12;">French (B2)</p>
               <p class="text-center jump" style="--i:13;">Mandarin (B1)</p>
               <p class="text-center jump" style="--i:14;">Danish (C2)</p>
-              <p class="text-center jump" style="--i:15;">Energetic</p>
+              <p class="text-center jump" style="--i:15;">German (A2)</p>
           </div>
        </div>  
     </section>
@@ -157,43 +157,69 @@
         </div>
 
       <div class="portfolio">
+
+        <div class="d-lg-none text-center mb-5">
+            <div class="btn-group experience-toggle" role="group" aria-label="Experience toggle">
+                <button type="button" class="btn btn-outline-light btn-sm active" data-exp="main">
+                    Main experience
+                </button>
+                <button type="button" class="btn btn-outline-light btn-sm" data-exp="additional">
+                    Additional experience
+                </button>
+            </div>
+        </div>
+  
           <div class="row">
-            <div class="col-6 text-center">
-              <h2 class="first">Main Experience</h2>
-                  <div class="project student" style="--i:3;" onclick="showDetails('Test Engineer')">
+    <!-- Main experience column -->
+            <div class="col-12 col-lg-6 text-center experience-main">
+                <h2 class="d-none d-lg-block first">Main Experience</h2>
+
+                <div class="project student" style="--i:3;" onclick="showDetails('Test Engineer')">
                     <span class="project-label">Test Engineering</span>
-                  </div>
-                  <div class="project student" style="--i:5;" onclick="showDetails('Full-stack Developer')">
+                </div>
+
+                <div class="project student" style="--i:5;" onclick="showDetails('Full-stack Developer')">
                     <span class="project-label">Web Development</span>
-                  </div>
-                  <div class="project student" style="--i:4;" onclick="showDetails('Vehicle Operations → Repair Partner')">
+                </div>
+
+                <div class="project student" style="--i:4;" onclick="showDetails('Vehicle Operations → Repair Partner')">
                     <span class="project-label">Process Management</span>
                 </div>
-                  <div class="project student" style="--i:6;" onclick="showDetails('Content Manager')">
+
+                <div class="project student" style="--i:6;" onclick="showDetails('Content Manager')">
                     <span class="project-label">Content Management</span>
-                    </div>
-                  <div class="project student" style="--i:7;" onclick="showDetails('Product Assistant')">
+                </div>
+
+                <div class="project student" style="--i:7;" onclick="showDetails('Product Assistant')">
                     <span class="project-label">Product Assistant</span>
                 </div>
-            </div>
-            <div class="col-6 text-center">
-              <h2 class="second">Additional Experience</h2>
-                <div class="project professional" style="--i:4;">
+                </div>
+
+                <!-- Additional experience column -->
+                <div class="col-12 col-lg-6 text-center experience-additional">
+                <h2 class="d-none d-lg-block second">Additional Experience</h2>
+
+                <div class="project professional" style="--i:4;" onclick="showDetails('Market Analyst Intern')">
                     <span class="project-label">Internships</span>
                 </div>
-                <div class="project professional" style="--i:5;">
+
+                <div class="project professional" style="--i:5;" onclick="showDetails('Vehicle Operations Specialist')">
                     <span class="project-label">Operations</span>
                 </div>
-                <div class="project professional" style="--i:3;">
+
+                <div class="project professional" style="--i:3;" onclick="showDetails('Volunteering')">
                     <span class="project-label">Volunteering</span>
                 </div>
-                <div class="project professional" style="--i:7;">
-                    <span class="project-label">English Teaching</span>
+
+                <div class="project professional" style="--i:7;" onclick="showDetails('English Teacher')">
+                    <span class="project-label">Teaching</span>
                 </div>
-                <div class="project professional" style="--i:6;">
-                    <span class="project-label">Guitar Teaching</span>
+
+                <div class="project professional" style="--i:6;" onclick="showDetails('Guitar Teacher')">
+                    <span class="project-label">Music</span>
                 </div>
-            </div>
+                </div>
+
         </div>
       </div>
       
