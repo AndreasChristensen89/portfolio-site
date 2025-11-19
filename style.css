@@ -980,3 +980,18 @@ body.theme-light .site-footer {
     height: 88px;
   }
 }
+
+
+/* Mobile: avoid overlap between title and badge */
+@media (max-width: 700px) {
+  .exp-card {
+    padding-top: 1rem;              /* normal padding */
+  }
+
+  .exp-pill {
+    position: static;               /* no absolute positioning */
+    display: inline-block;
+    margin-bottom: 0.3rem;
+    align-self: flex-start;         /* stay left inside card */
+  }
+}
