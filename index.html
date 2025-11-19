@@ -1,248 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-    
-    <title>Personal page</title>
+  <meta charset="UTF-8" />
+  <title>Andreas Brogaard Christensen · Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-dark text-white">
-  <div id="darkBackground" class="d-none"></div>
-    <div class="container-fluid">
-    <header>
-  <nav class="navbar bg-dark navbar-expand-lg mx-5" data-bs-theme="dark">
-    <a class="navbar-brand mx-5 text-white logo" id="reloadPage" href="#">O</a>
+<body class="theme-dark">
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#home" class="logo">AB</a>
 
-    <!-- Custom burger (no Bootstrap collapse) -->
-    <button class="navbar-burger" type="button" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <i class="bx bx-moon"></i>
+        </button>
 
-    <div class="navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto mx-5">
-        <li class="nav-item active">
-          <a class="nav-link" data-section="home" style="--i:1;" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-section="about" style="--i:2;" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-section="skills" style="--i:3;" href="#">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-section="portfolio" style="--i:4;" href="#">Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-section="contact" style="--i:5;" href="#">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</header>
+        <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-<!-- Overlay for mobile menu -->
-<div id="navOverlay"></div> 
-
-    <section class="section active mt-5 mt-md-0" id="section-home">
-        <div class="row">
-            <div id="home" class="col-12 col-md-6 right-side">
-                <div class="home-content text-center text-md-start">
-                    <h3>Hi there, I'm</h3>
-                    <h1>Andreas</h1>
-                    <h3>And this is my<br> <span class="typed d-lg-inline" id="workRoles"></span></h3>
-                    <p>Have a look around and feel free to get in touch.</p>
-                    <div class="social-media">
-                      <a href="https://www.linkedin.com/in/andreasbrogaard" target="_blank" style="--i:7;"><i class='bx bxl-linkedin-square'></i></a>
-                      <a href="https://github.com/AndreasChristensen89" target="_blank" style="--i:8;"><i class='bx bxl-github'></i></a>
-                        <a href="#" style="--i:9;"><i class='bx bxl-instagram'></i></a>
-                        <a href="#" style="--i:10;"><i class='bx bxl-youtube' ></i></a>
-                    </div>
-                    <a href="CV.pdf" target=”_blank” class="cv-btn">Download CV</a>
-                </div>
-                </div>
-                
-            <div class="d-none d-md-block col-12 col-md-6 left-side">
-                <img src="hero_picture.png" class="home-img">
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="section-about">
-
-  <h1 class="h1 mt-5 text-center d-lg-none">Tablet & Mobile view coming soon</h1>
-
-  <div class="row d-none d-lg-flex">
-    <div class="col-12 col-lg-6 left-side d-flex justify-content-center align-items-center">
-      <img src="hero_image.png" class="about-img d-none d-md-block">
-    </div>
-    <div id="about" class="col-12 col-lg-6">
-      <div class="about-content">
-        <h1>Andreas Christensen</h1>
-        <div class="height">
-          <p class="typed" id="firstIntro"></p>
-          <p class="typed" id="secondIntro"></p>
-        </div>
-        <div class="social-media">
-          <!-- links -->
-        </div>
+        <nav class="site-nav">
+          <ul>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-    <section class="section" id="section-skills">
-      <div class="d-flex justify-content-center align-items-center" id="skill-cards">
-        <div style="--i:1;" class="skill-card skill rounded">
-            <div class="card-top first d-flex justify-content-center align-items-center border-bottom">
-                <h2 class="first"><i class='bx bx-pen' ></i></h2>
-            </div>
-            <p class="text-center jump" style="--i:1;">Operations</p>
-            <p class="text-center jump" style="--i:2;">Logistics</p>
-            <p class="text-center jump" style="--i:3;">Web Development</p>
-            <p class="text-center jump" style="--i:4;">Teaching</p>
-            <p class="text-center jump" style="--i:5;">Project Management</p>
+  <!-- Main content -->
+  <main>
+    <!-- Hero / Welcome -->
+    <section id="home" class="section section-hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Welcome 👋</p>
+          <h1>Hi, I'm <span>Andreas</span></h1>
+          <p class="hero-lead">
+            People-focused professional with a global career across IT, operations,
+            and international collaboration.
+          </p>
+          <p class="hero-sub">
+            I connect teams, markets, and ideas – from test engineering and web
+            development to logistics and process improvement.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#experience" class="btn btn-primary">View experience</a>
+            <a href="#contact" class="btn btn-ghost">Get in touch</a>
           </div>
-          <div style="--i:2;" class="skill-card skill rounded">
-              <div class="card-top second d-flex justify-content-center align-items-center border-bottom">
-                  <h2 class="second"><i class='bx bx-code-alt' ></i></h2>
-              </div>
-              <p class="text-center jump" style="--i:6;">Python (Django)</p>
-              <p class="text-center jump" style="--i:7;">HTML/CSS/JS/HTMX</p>
-              <p class="text-center jump" style="--i:8;">SAP</p>
-              <p class="text-center jump" style="--i:9;">Jira/Confluence</p>
-              <p class="text-center jump" style="--i:10;">Test Automation</p>
+
+          <div class="hero-socials">
+            <a href="mailto:brogaard89@gmail.com" aria-label="Email">
+              <i class="bx bx-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/andreasbrogaard" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <i class="bx bxl-linkedin"></i>
+            </a>
+            <a href="https://github.com/AndreasChristensen89" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <i class="bx bxl-github"></i>
+            </a>
           </div>
-          <div style="--i:3;" class="skill-card skill rounded">
-              <div class="card-top third d-flex justify-content-center align-items-center border-bottom">
-                  <h2 class="third"><i class='bx bx-select-multiple'></i></h2>
-              </div>
-              <p class="text-center jump" style="--i:11;">English (C2)</p>
-              <p class="text-center jump" style="--i:12;">French (B2)</p>
-              <p class="text-center jump" style="--i:13;">Mandarin (B1)</p>
-              <p class="text-center jump" style="--i:14;">Danish (C2)</p>
-              <p class="text-center jump" style="--i:15;">German (A2)</p>
-          </div>
-       </div>  
-    </section>
-
-    <section class="section" id="section-portfolio">
-
-        <div id="experienceOverlay"></div>
-
-        <div class="experience">
-            <button class="close-bubble" onclick="closeInformation()">×</button>
-
-            <div class="experience-inner">
-                <div class="experience-header">
-                <h3 class="experience-title"></h3>
-                <p class="experience-company"></p>
-                <p class="experience-meta">
-                    <span class="experience-location"></span>
-                    <span class="dot">·</span>
-                    <span class="experience-dates"></span>
-                </p>
-                </div>
-
-                <p class="experience-summary"></p>
-
-                <div class="experience-tags"></div>
-            </div>
         </div>
 
-      <div class="portfolio">
+        <div class="hero-card">
+          <!-- Pencil art portrait (you add the final image file) -->
+          <figure class="hero-avatar">
+            <img
+              src="andreas.JPG"
+              alt="Portrait of Andreas Brogaard Christensen"
+              loading="lazy"
+            />
+          </figure>
 
-        <div class="d-lg-none text-center mb-5">
-            <div class="btn-group experience-toggle" role="group" aria-label="Experience toggle">
-                <button type="button" class="btn btn-outline-light btn-sm active" data-exp="main">
-                    Main experience
-                </button>
-                <button type="button" class="btn btn-outline-light btn-sm" data-exp="additional">
-                    Additional experience
-                </button>
-            </div>
-        </div>
-  
-          <div class="row">
-    <!-- Main experience column -->
-            <div class="col-12 col-lg-6 text-center experience-main">
-                <h2 class="d-none d-lg-block first">Main Experience</h2>
-
-                <div class="project student" style="--i:3;" onclick="showDetails('Test Engineer')">
-                    <span class="project-label">Test Engineering</span>
-                </div>
-
-                <div class="project student" style="--i:5;" onclick="showDetails('Full-stack Developer')">
-                    <span class="project-label">Web Development</span>
-                </div>
-
-                <div class="project student" style="--i:4;" onclick="showDetails('Vehicle Operations → Repair Partner')">
-                    <span class="project-label">Process Management</span>
-                </div>
-
-                <div class="project student" style="--i:6;" onclick="showDetails('Content Manager')">
-                    <span class="project-label">Content Management</span>
-                </div>
-
-                <div class="project student" style="--i:7;" onclick="showDetails('Product Assistant')">
-                    <span class="project-label">Product Assistant</span>
-                </div>
-                </div>
-
-                <!-- Additional experience column -->
-                <div class="col-12 col-lg-6 text-center experience-additional">
-                <h2 class="d-none d-lg-block second">Additional Experience</h2>
-
-                <div class="project professional" style="--i:4;" onclick="showDetails('Market Analyst Intern')">
-                    <span class="project-label">Internships</span>
-                </div>
-
-                <div class="project professional" style="--i:5;" onclick="showDetails('Vehicle Operations Specialist')">
-                    <span class="project-label">Operations</span>
-                </div>
-
-                <div class="project professional" style="--i:3;" onclick="showDetails('Volunteering')">
-                    <span class="project-label">Volunteering</span>
-                </div>
-
-                <div class="project professional" style="--i:7;" onclick="showDetails('English Teacher')">
-                    <span class="project-label">Teaching</span>
-                </div>
-
-                <div class="project professional" style="--i:6;" onclick="showDetails('Guitar Teacher')">
-                    <span class="project-label">Music</span>
-                </div>
-                </div>
-
+          <div class="hero-badge">
+            <span class="dot"></span>
+            Multicultural profile
+          </div>
+          <h2>Global career path</h2>
+          <p>
+            10+ years abroad: China, Japan, Finland, France, Belgium, Denmark.
+            Comfortable working between HQ and local teams.
+          </p>
+          <ul>
+            <li>Operations & process management</li>
+            <li>Test engineering & web development</li>
+            <li>Teaching, mentoring & collaboration</li>
+          </ul>
         </div>
       </div>
-      
     </section>
 
-    <section class="section" id="section-contact">
-        <div class="contact">
-          <div class="col-12 text-center">
-            <h1>Contact</h1>
+    <!-- About -->
+    <section id="about" class="section section-about">
+      <div class="container section-inner">
+        <div class="section-header">
+          <p class="eyebrow">About</p>
+          <h2>Who I am</h2>
+          <p class="section-intro">
+            A connector between people, technology, and operations.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I’m a people-driven professional with a background spanning test
+              engineering, full-stack development, and project/process management.
+              I enjoy roles where I can translate between technical teams and
+              operations, and help ideas move from strategy to execution.
+            </p>
+            <p>
+              Having spent around a decade living abroad – in China, Japan,
+              Finland, France, Belgium, and Denmark – I feel at home in
+              multicultural environments and cross-border projects.
+            </p>
+            <p>
+              Colleagues describe me as adaptable, positive, and collaborative.
+              I thrive when I can support local crews on the ground, work with HQ
+              on new initiatives, and bridge European and Chinese markets.
+            </p>
           </div>
-          <div class="col-12 text-center">
-            <h2>Email</h2>
-            <span id="email"></span>
-          </div>
-          <div class="col-12 text-center">
-            <p id="downloadCV"></p>
-            <a href="CV.pdf" class="cv-btn">Download CV</a>
+
+          <div class="about-highlights">
+            <div class="about-chip-group">
+              <span class="chip">Test engineering</span>
+              <span class="chip">Web development</span>
+              <span class="chip">Operations & logistics</span>
+              <span class="chip">Process improvement</span>
+              <span class="chip">International collaboration</span>
+            </div>
+            <div class="about-list">
+              <h3>Quick facts</h3>
+              <ul>
+                <li>Based in Brussels, Belgium</li>
+                <li>Comfortable in English, French, Danish & Mandarin</li>
+                <li>Background in Chinese area studies & globalization</li>
+                <li>DISC: Action & Collaboration</li>
+              </ul>
+            </div>
           </div>
         </div>
+      </div>
     </section>
-</div>
 
-    <script src="https://unpkg.com/typed.js@2.0.14/dist/typed.umd.js"></script>
-    <script src="index.js"></script>
+    <!-- Experience -->
+    <section id="experience" class="section section-experience">
+      <div class="container section-inner">
+        <div class="section-header">
+          <p class="eyebrow">Experience</p>
+          <h2>Professional journey</h2>
+          <p class="section-intro">
+            All roles, from recent test engineering work to earlier teaching and support positions.
+          </p>
+        </div>
+
+        <!-- Filters -->
+        <div class="experience-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="it">IT & Digital</button>
+          <button class="filter-btn" data-filter="operations">Operations & Logistics</button>
+          <button class="filter-btn" data-filter="teaching">Teaching & Education</button>
+          <button class="filter-btn" data-filter="other">Other</button>
+        </div>
+
+        <!-- Experience cards -->
+        <div id="experience-list" class="experience-list">
+          <!-- Cards injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section section-skills">
+      <div class="container section-inner">
+        <div class="section-header">
+          <p class="eyebrow">Skills</p>
+          <h2>What I bring to a team</h2>
+          <p class="section-intro">
+            A mix of technical literacy, operations mindset, and intercultural experience.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Core strengths</h3>
+            <ul>
+              <li>International operations & coordination</li>
+              <li>Collaborative problem solving</li>
+              <li>Process rollout & improvement</li>
+              <li>Stakeholder communication</li>
+              <li>Team support & mentoring</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h3>Tools & tech</h3>
+            <ul>
+              <li>Test automation (Java, Cucumber, Selenium)</li>
+              <li>Frontend QA for web, mobile & TV apps</li>
+              <li>Python & Django, HTML/CSS/JS, HTMX</li>
+              <li>Databases (Postgres) & basic APIs</li>
+              <li>Confluence, Jira & digital collaboration tools</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h3>Languages</h3>
+            <ul>
+              <li>English — Native / Bilingual</li>
+              <li>Danish — Native / Bilingual</li>
+              <li>French — Professional working</li>
+              <li>Mandarin Chinese — Limited working</li>
+              <li>Swedish & Norwegian — Professional working</li>
+              <li>German & Spanish — Limited working</li>
+              <li>Japanese — Elementary</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-contact">
+      <div class="container section-inner">
+        <div class="section-header">
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s connect</h2>
+          <p class="section-intro">
+            Open to roles that combine people, operations, and technology – especially in international contexts.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3><i class="bx bx-envelope"></i> Email</h3>
+            <a href="mailto:brogaard89@gmail.com" class="contact-link">
+              brogaard89@gmail.com
+            </a>
+          </div>
+
+          <div class="contact-card">
+            <h3><i class="bx bxl-linkedin"></i> LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/andreasbrogaard" target="_blank" rel="noreferrer" class="contact-link">
+              linkedin.com/in/andreasbrogaard
+            </a>
+          </div>
+
+          <div class="contact-card">
+            <h3><i class="bx bx-map"></i> Location</h3>
+            <p>Brussels, Belgium · Open to international collaboration</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Andreas Brogaard Christensen · Global career path | 学中文</p>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
 </body>
 </html>
