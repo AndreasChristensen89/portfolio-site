@@ -2,6 +2,24 @@
 
 const EXPERIENCES = [
   {
+  title: "Educational Support Assistant (SEN & Teaching)",
+  company: "European School Brussels I",
+  location: "Brussels, Belgium",
+  period: "Nov 2025 – present",
+  order: 202511,
+  category: "education",
+  summary:
+    "Providing specialised educational and care support to pupils with special educational needs in the Danish Language Section. The role combines in-class pedagogical support, small-group and individual instruction, inclusion work, and substitute teaching, in close collaboration with teachers, healthcare professionals, and families.",
+  tags: [
+    "Special Educational Needs (SEN)",
+    "Learning Support",
+    "Classroom Support",
+    "Substitute Teaching",
+    "Student Wellbeing",
+    "European Schools"
+  ]
+},
+  {
     title: "Test Engineer Consultant",
     company: "Sopra Steria",
     location: "Brussels, Belgium",
@@ -410,3 +428,4 @@ document.addEventListener("DOMContentLoaded", () => {
   setupExperienceFilters();
   setCurrentYear();
 });
+
