@@ -2,7 +2,7 @@
 
 const EXPERIENCES = [
   {
-  title: "Educational Support Assistant (SEN & Teaching)",
+  title: "Learning Support Teacher & Educational Assistant",
   company: "European School Brussels I",
   location: "Brussels, Belgium",
   period: "Nov 2025 – present",
