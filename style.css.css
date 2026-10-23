@@ -1,0 +1,64 @@
+:root{
+  --sea1:#9be7ff; --sea2:#0ea5e9; --land:#86d36b; --land2:#4fae52;
+  --ink:#0b3954; --sun:#ffb703; --coral:#fb6f4a; --card:rgba(255,255,255,.94);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;overscroll-behavior:none;background:var(--sea2);
+  font-family:"Avenir Next","Trebuchet MS",system-ui,sans-serif;color:var(--ink)}
+
+/* ---------- map ---------- */
+#map{position:fixed;inset:0;width:100%;height:100%;
+  background:radial-gradient(120% 90% at 50% 20%,var(--sea1),var(--sea2) 70%)}
+.grid{fill:none;stroke:#fff;stroke-opacity:.35;stroke-width:1;vector-effect:non-scaling-stroke}
+.land{fill:var(--land);stroke:var(--land2);stroke-width:1.5;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.ice{fill:#f4fbff;stroke:none}
+.route{fill:none;stroke:#fff;stroke-opacity:.55;stroke-width:2;stroke-dasharray:3 7;
+  stroke-linecap:round;vector-effect:non-scaling-stroke}
+.route.done{stroke:var(--sun);stroke-opacity:1;stroke-dasharray:none;stroke-width:3}
+.pin{fill:#fff;stroke:var(--coral);stroke-width:3;vector-effect:non-scaling-stroke}
+.pin.on{fill:var(--coral);stroke:#fff}
+.ring{fill:none;stroke:var(--coral);stroke-width:2;vector-effect:non-scaling-stroke;opacity:0}
+.ring.live{opacity:.9;animation:ping 1.8s ease-out infinite}
+@keyframes ping{from{stroke-opacity:1}to{stroke-opacity:0}}
+#plane path{fill:#fff;stroke:var(--coral);stroke-width:2;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+
+/* ---------- HUD ---------- */
+#hud{position:fixed;top:max(10px,env(safe-area-inset-top));left:12px;right:12px;z-index:2;pointer-events:none}
+#dots{display:flex;gap:4px}
+#dots i{flex:1;height:5px;border-radius:3px;background:rgba(255,255,255,.45);transition:background .4s}
+#dots i.on{background:#fff}
+#where{margin-top:8px;font-weight:700;font-size:13px;color:#fff;text-shadow:0 1px 6px rgba(0,60,100,.5)}
+
+/* ---------- card ---------- */
+#card{position:fixed;z-index:3;left:10px;right:10px;margin:0 auto;max-width:520px;
+  bottom:max(10px,env(safe-area-inset-bottom));background:var(--card);border-radius:28px;
+  padding:10px 20px 18px;box-shadow:0 14px 40px rgba(0,50,90,.35);touch-action:none;
+  user-select:none;-webkit-user-select:none;cursor:grab;
+  transition:transform .45s cubic-bezier(.3,.8,.3,1),opacity .35s}
+#card.drag{transition:none;cursor:grabbing}
+#card.out{transform:translateY(130%)!important;opacity:0}
+#card.in{animation:rise .55s cubic-bezier(.2,.9,.3,1)}
+@keyframes rise{from{transform:translateY(60%);opacity:0}}
+.grab{width:42px;height:5px;border-radius:3px;background:#b9d7e6;margin:0 auto 12px}
+.head{display:flex;align-items:center;gap:12px}
+.flag{font-size:38px;line-height:1}
+h1,h2{line-height:1.1}
+h2{font-size:24px}
+h1{font-size:27px}
+.sub{font-size:13px;opacity:.7;margin-top:3px}
+.title{margin:12px 0 8px;font-weight:700;color:var(--coral);font-size:15px}
+ul{list-style:none;display:grid;gap:7px}
+li{font-size:14px;line-height:1.35;padding-left:2px}
+.lead{font-size:15px;line-height:1.45;margin-top:12px}
+.nx{display:block;margin:14px auto 0;border:0;background:none;color:var(--sea2);font:inherit;
+  font-weight:700;font-size:13px;cursor:pointer}
+.nx b{display:block;font-size:20px;animation:bob 1.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(5px)}}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.btn{flex:1;text-align:center;padding:11px 12px;border-radius:14px;border:0;font:inherit;font-weight:700;
+  font-size:14px;text-decoration:none;color:#fff;background:var(--sea2);cursor:pointer}
+.btn.alt{background:var(--land2)}
+.btn.ghost{background:#e4f4fb;color:var(--ink)}
+
+@media (prefers-reduced-motion:reduce){.nx b,.ring.live{animation:none}#card.in{animation:none}}
+@media (min-width:700px){#card{bottom:24px}}
